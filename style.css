@@ -1,37 +1,95 @@
-body {
-  font-family: sans-serif;
+/* Base Reset */
+* {
   margin: 0;
-  padding: 1rem;
-  background: #fafafa;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0d47a1;
+  --primary-light: #5472d3;
+  --accent: #03a9f4;
+  --bg: #f4f6f8;
+  --text: #1c1c1c;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-top: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem 2rem;
   display: flex;
-  gap: 1rem;
-  background: #0d47a1;
-  color: white;
-  padding: 1rem;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: var(--shadow);
+  z-index: 10;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
 
 main {
+  max-width: 800px;
+  margin: 2rem auto;
   padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
+/* Headings */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Install Popup */
 #install-popup {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: var(--white);
+  color: var(--text);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   z-index: 1000;
+  animation: slideDown 0.3s ease-out;
 }
 
 #install-popup.hidden {
@@ -39,5 +97,54 @@ main {
 }
 
 #install-popup button {
-  margin: 0 0.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#install-popup button:hover {
+  background-color: var(--primary-light);
+}
+
+/* Fallback for Offline Page */
+.offline-message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  #install-popup {
+    flex-direction: column;
+    text-align: center;
+  }
 }
