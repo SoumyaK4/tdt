@@ -1,38 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - TDT</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- SEO & PWA -->
+  <meta name="description" content="Welcome to TDT by SoumyaK4 – A modern PWA" />
+  <meta name="theme-color" content="#0d47a1" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png" />
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="style.css" />
   <script src="install.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+
   <script>
+    // Register Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js');
       });
     }
 
-  // Optional: Redirect if opened via web+tdt: protocol
-  const url = new URL(window.location.href);
-  const params = new URLSearchParams(url.search);
-  if (params.has('web+tdt')) {
-    const path = params.get('web+tdt');
-    window.location.href = `/${path}.html`;
-  }
- </script>
+    // Redirect for protocol handler
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    if (params.has('web+tdt')) {
+      const path = params.get('web+tdt');
+      window.location.href = `/${path}.html`;
+    }
+  </script>
 </head>
+
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌓</button>
   </nav>
 
   <main>
     <h1>Welcome to TDT</h1>
-    <p>This is the about page.</p>
+    <p>This is the About page.</p>
   </main>
 
   <div id="install-popup" class="hidden">
