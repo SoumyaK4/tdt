@@ -9,6 +9,7 @@
   "theme_color": "#0d47a1",
   "description": "Three-page offline-capable PWA by SoumyaK4",
   "categories": ["education", "games", "productivity"],
+  "id": "/index.html",
   "icons": [
     {
       "src": "/icons/icon-192.png",
