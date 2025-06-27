@@ -3,13 +3,13 @@ const popup = document.getElementById('install-popup');
 const installBtn = document.getElementById('install-btn');
 const dismissBtn = document.getElementById('dismiss-btn');
 
+// Service: PWA install popup logic
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
   const installed = localStorage.getItem('tdt_installed');
   const dismissedUntil = localStorage.getItem('tdt_dismissed_until');
-
   const now = new Date().getTime();
 
   if (!installed && (!dismissedUntil || now > parseInt(dismissedUntil))) {
@@ -36,3 +36,17 @@ dismissBtn?.addEventListener('click', () => {
   tomorrow.setDate(tomorrow.getDate() + 1);
   localStorage.setItem('tdt_dismissed_until', tomorrow.getTime().toString());
 });
+
+// Protocol Handler Registration
+if ('registerProtocolHandler' in navigator) {
+  try {
+    navigator.registerProtocolHandler(
+      'web+tdt',
+      `${location.origin}/?web+tdt=%s`,
+      'TDT Protocol'
+    );
+    console.log('Registered web+tdt handler');
+  } catch (err) {
+    console.warn('Protocol handler registration failed:', err);
+  }
+}
