@@ -2,37 +2,31 @@
   "name": "TDT - SoumyaK4",
   "short_name": "TDT",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#ffffff",
   "theme_color": "#0d47a1",
+  "description": "Three-page offline-capable PWA by SoumyaK4",
+  "categories": ["education", "games", "productivity"],
   "icons": [
     {
       "src": "/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [
-    {
-      "src": "/screenshots/screenshot1.jpg",
-      "sizes": "1280x720",
-      "type": "image/png"
-    },
-    {
-      "src": "/screenshots/screenshot2.jpg",
-      "sizes": "1280x720",
-      "type": "image/png"
-    },
-    {
-      "src": "/screenshots/screenshot3.jpg",
-      "sizes": "1280x720",
-      "type": "image/png"
-    }
+    { "src": "/screenshots/screenshot1.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot2.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot3.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" }
   ],
   "shortcuts": [
     {
@@ -50,5 +44,7 @@
       "url": "/contact.html",
       "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
     }
-  ]
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
