@@ -47,7 +47,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+tdt",
-      "url": "https://tdt.soumyak4.in/%s"
+      "url": "https://tdt.soumyak4.in/?web+tdt=%s"
     }
   ],
   "related_applications": [],
