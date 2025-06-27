@@ -4,7 +4,12 @@
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#0d47a1",
   "description": "Three-page offline-capable PWA by SoumyaK4",
@@ -50,6 +55,5 @@
       "url": "https://tdt.soumyak4.in/?web+tdt=%s"
     }
   ],
-  "related_applications": [],
   "prefer_related_applications": false
 }
