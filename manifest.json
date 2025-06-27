@@ -24,9 +24,9 @@
     }
   ],
   "screenshots": [
-    { "src": "/screenshots/screenshot1.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" },
-    { "src": "/screenshots/screenshot2.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" },
-    { "src": "/screenshots/screenshot3.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" }
+    { "src": "/screenshots/screenshot1.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot2.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot3.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" }
   ],
   "shortcuts": [
     {
