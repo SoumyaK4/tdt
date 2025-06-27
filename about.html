@@ -13,7 +13,15 @@
         navigator.serviceWorker.register('/service-worker.js');
       });
     }
-  </script>
+
+  // Optional: Redirect if opened via web+tdt: protocol
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams(url.search);
+  if (params.has('web+tdt')) {
+    const path = params.get('web+tdt');
+    window.location.href = `/${path}.html`;
+  }
+ </script>
 </head>
 <body>
   <nav>

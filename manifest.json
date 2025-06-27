@@ -24,9 +24,9 @@
     }
   ],
   "screenshots": [
-    { "src": "/screenshots/screenshot1.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
-    { "src": "/screenshots/screenshot2.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" },
-    { "src": "/screenshots/screenshot3.png", "sizes": "900x1600", "form_factor": "narrow", "type": "image/png" }
+    { "src": "/screenshots/screenshot1.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot2.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" },
+    { "src": "/screenshots/screenshot3.png", "sizes": "1280x720", "form_factor": "narrow", "type": "image/png" }
   ],
   "shortcuts": [
     {
@@ -43,6 +43,12 @@
       "name": "Contact",
       "url": "/contact.html",
       "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+tdt",
+      "url": "https://tdt.soumyak4.in/%s"
     }
   ],
   "related_applications": [],
